@@ -13,7 +13,7 @@ int main() {
     int pontos_turiscos1; //Numeros de pontos turiscos da cidade
     float densidade1;
     float capita1;
-
+    float super_poder1;
     //variaves da segunda carta
     
     char estado2;
@@ -25,6 +25,8 @@ int main() {
     int pontos_turiscos2; //Numeros de pontos turiscos da cidade
     float densidade2;
     float capita2;  
+     float super_poder2;
+
 
     //Entrada de dados carta 1
 
@@ -53,7 +55,10 @@ int main() {
     
     densidade1 = (populacao1 / area1);
     capita1 = (pib1 / populacao1); 
+    super_poder1 = ((densidade1 / 1) + capita1 + pib1);
 
+    
+    
     //Entrada de dados carta 2
 
     printf("Cadastro da carta 2:\n");
@@ -81,6 +86,9 @@ int main() {
     
     densidade2 = (populacao2 / area2);
     capita2 = (pib2 / populacao2); 
+    super_poder2 = ((capita2 / 1) + densidade2 + pib2);
+
+    
 
     //Exibição de dados carta 1
 
@@ -94,7 +102,7 @@ int main() {
     printf("Pontos turísticos: %d\n", pontos_turiscos1);
     printf("Densidade populacional: %.2f\n", densidade1); 
     printf("PIB per Capita: %.2f\n", capita1); 
-
+    printf("Super poder: %.2f\n", super_poder1);
     //Exibição de dados carta 2
 
     printf("\nCarta2 \n");
@@ -107,6 +115,13 @@ int main() {
     printf("Pontos turísticos: %d\n", pontos_turiscos2);
     printf("Densidade populacional: %.2f\n", densidade2); 
     printf("PIB per Capita: %.2f\n", capita2); 
-
+    printf("Super poder: %.2f\n", super_poder2);
+   
+    if (super_poder1 > super_poder2)
+    {
+        printf("Carta 1 venceu!!!");
+    } else{
+        printf("Carta 2 venceu!!!");
+    }
     return 0;
 }
